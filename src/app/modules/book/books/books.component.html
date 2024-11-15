@@ -1,0 +1,138 @@
+<!-- <div class="row mt-2">
+    <div class="card box-shadow-0">
+        <div class="card-header">
+            <h4 class="card-title mb-2">
+                Books
+            </h4>
+            <p class="tx-13 mb-4">
+                This screen serves as a dashboard for efficiently viewing and managing books.
+            </p>
+        </div>
+        <div class="card-body pt-0">
+            <div class="d-flex justify-content-end mt-3 mb-2">
+                <button class="btn btn-outline-primary btn-rounded btn-sm" (click)="openBookModal(undefined)">
+                    Add New
+                </button>
+            </div>
+
+            <div *ngIf="books.length == 0" class="row mt-2">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="card mg-b-20 text-center">
+                        <div class="card-body h-100">
+                            <img src="assets/note_taking.svg" alt="" style="width: 25%;" />
+                            <h5 class="mg-b-10 mg-t-15 tx-18">
+                                There are no books available to show
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="books.length > 0" class="row row-sm">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered text-nowrap mb-0" id="Books">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Genre</th>
+                                    <th>Published Year</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr *ngFor="let item of books">
+                                    <td> {{item.title}} </td>
+                                    <td> {{item.author}} </td>
+                                    <td> {{item.genre}} </td>
+                                    <td> {{item.publishedYear}} </td>
+                                    <td>
+                                        <button (click)="deleteBook(item.id)" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                        <button (click)="openBookModal(item)" class="btn btn-success btn-sm ms-2">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row mt-2">
+    <div class="col-12">
+        <mat-card class="box-shadow-0 mx-2">
+            <mat-card-header>
+                <mat-card-title>
+                    <h4 class="mb-2">Books Dashboard</h4>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <p class="tx-13 mb-3">
+                        This screen serves as a dashboard for efficiently viewing and managing books.
+                    </p>
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+
+        <div class="card-body pt-0 mx-2">
+            <div class="d-flex justify-content-end mt-3 mb-2">
+                <button class="btn btn-outline-primary btn-rounded btn-sm" (click)="openBookModal(undefined)">
+                    Add New
+                </button>
+            </div>
+
+            <div *ngIf="books.length == 0" class="row mt-2">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="card mg-b-20 text-center">
+                        <div class="card-body h-100">
+                            <img src="assets/note_taking.svg" alt="" style="width: 25%;" />
+                            <h5 class="mg-b-10 mg-t-15 tx-18">
+                                There are no books available to show
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="books.length > 0" class="row row-sm">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered text-nowrap mb-0" id="Books">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Genre</th>
+                                    <th>Published Year</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr *ngFor="let item of books">
+                                    <td> {{item.title}} </td>
+                                    <td> {{item.author}} </td>
+                                    <td> {{item.genre}} </td>
+                                    <td> {{item.publishedYear}} </td>
+                                    <td>
+                                        <button (click)="deleteBook(item.id)" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                        <button (click)="openBookModal(item)" class="btn btn-success btn-sm ms-2">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

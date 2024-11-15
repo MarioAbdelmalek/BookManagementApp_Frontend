@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h4 *ngIf="!bookToBeUpdated">Add New Book</h4>
+    <h4 *ngIf="bookToBeUpdated">Edit Book</h4>
+</div>
+
+<form [formGroup]="bookForm">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-3">
+                <label class="form-label">Title</label>
+                <input class="form-control" autocomplete="off" formControlName="title" type="text" />
+                <div *ngIf="formErrors.title && bookForm.controls['title'].status == 'INVALID'"
+                    class="error-message mt-1">Required
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-3">
+                <label class="form-label">Author</label>
+                <input class="form-control" autocomplete="off" formControlName="author" type="text" />
+                <div *ngIf="formErrors.author && bookForm.controls['author'].status == 'INVALID'"
+                    class="error-message mt-1">Required
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <label class="form-label">Genre</label>
+                <input class="form-control" autocomplete="off" formControlName="genre" type="text" />
+                <div *ngIf="formErrors.genre && bookForm.controls['genre'].status == 'INVALID'"
+                    class="error-message mt-1">Required
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <label class="form-label">Published Year</label>
+                <input class="form-control" autocomplete="off" formControlName="publishedYear" type="text"
+                    (keypress)="validateNumber($event)" />
+                <div *ngIf="formErrors.publishedYear && bookForm.controls['publishedYear'].status == 'INVALID'"
+                    class="error-message mt-1">Required
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn ripple btn-success" (click)="createOrUpdateBook()">
+            Submit
+        </button>
+        <button type="button" class="btn ripple btn-danger" (click)="close()">
+            Close
+        </button>
+    </div>
+</form>
